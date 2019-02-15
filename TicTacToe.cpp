@@ -82,7 +82,7 @@ int main()
             valide = setSign(L1, L2, L3, 'X', ligne, colonne);
             if(!valide)
             {
-                std::cout << "Ligne et/ou Colonne invalide ou déjà prise." << std::endl;
+                std::cout << "Ligne et/ou Colonne invalide ou dÃ©jÃ  prise." << std::endl;
             }
         }
         afficheJeu(L1, L2, L3);
@@ -103,7 +103,7 @@ int main()
             valide = setSign(L1, L2, L3, '0', ligne, colonne);
             if(!valide)
             {
-                std::cout << "Ligne et/ou Colonne invalide ou déjà prise." << std::endl;
+                std::cout << "Ligne et/ou Colonne invalide ou dÃ©jÃ  prise." << std::endl;
             }
         }
         afficheJeu(L1, L2, L3);
