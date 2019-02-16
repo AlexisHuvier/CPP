@@ -38,7 +38,7 @@ int main()
     }
     else
     {
-        std::string egals = "";
+        std::string egals {""};
         for(unsigned int i=0; i<phrase.length(); i++)
         {
             egals += "=";
