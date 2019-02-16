@@ -1,6 +1,7 @@
 #include <iostream>
+#include <array>
 
-bool win(char *L1, char *L2, char *L3, char player)
+bool win(std::array<char, 3> &L1, std::array<char, 3> &L2, std::array<char, 3> &L3, char player)
 {
     if(L1[0] == player)
     {
@@ -19,7 +20,7 @@ bool win(char *L1, char *L2, char *L3, char player)
     return false;
 }
 
-void afficheJeu(char *L1, char *L2, char *L3)
+void afficheJeu(std::array<char, 3> &L1, std::array<char, 3> &L2, std::array<char, 3> &L3)
 {
     std::cout << std::endl << "    1   2   3" << std::endl;
     std::cout << "  |===|===|===|" << std::endl;
@@ -31,7 +32,7 @@ void afficheJeu(char *L1, char *L2, char *L3)
     std::cout << "  |===|===|===|" << std::endl << std::endl;
 }
 
-bool setSign(char *L1, char *L2, char *L3, char player, int ligne, int colonne)
+bool setSign(std::array<char, 3> &L1, std::array<char, 3> &L2, std::array<char, 3> &L3, char player, int ligne, int colonne)
 {
     if(ligne == 1)
     {
@@ -62,11 +63,12 @@ bool setSign(char *L1, char *L2, char *L3, char player, int ligne, int colonne)
 
 int main()
 {
-    char L1[3] {'-', '-', '-'};
-    char L2[3] {'-', '-', '-'};
-    char L3[3] {'-', '-', '-'};
-    int ligne = 4, colonne;
-    bool valide = false;
+    std::array<char, 3> L1 {'-', '-', '-'};
+    std::array<char, 3> L2 {'-', '-', '-'};
+    std::array<char, 3> L3 {'-', '-', '-'};
+    int ligne {4}, colonne;
+    bool valide {false};
+    std::cout << L1[0] << std::endl;
     afficheJeu(L1, L2, L3);
     while(true)
     {
@@ -82,7 +84,7 @@ int main()
             valide = setSign(L1, L2, L3, 'X', ligne, colonne);
             if(!valide)
             {
-                std::cout << "Ligne et/ou Colonne invalide ou dÃ©jÃ  prise." << std::endl;
+                std::cout << "Ligne et/ou Colonne invalide ou déjà prise." << std::endl;
             }
         }
         afficheJeu(L1, L2, L3);
@@ -103,7 +105,7 @@ int main()
             valide = setSign(L1, L2, L3, '0', ligne, colonne);
             if(!valide)
             {
-                std::cout << "Ligne et/ou Colonne invalide ou dÃ©jÃ  prise." << std::endl;
+                std::cout << "Ligne et/ou Colonne invalide ou déjà prise." << std::endl;
             }
         }
         afficheJeu(L1, L2, L3);
